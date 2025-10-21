@@ -2,9 +2,23 @@ plugins {
     alias(libs.plugins.androidApplication)
 }
 
+import java.util.Properties
+
+// --- Διάβασε το WEATHER_API_KEY από local.properties ---
+def localProps = new Properties()
+def lpFile = rootProject.file("local.properties")
+if (lpFile.exists()) {
+    lpFile.withInputStream { localProps.load(it) }
+}
+def weatherApiKey = localProps.getProperty("WEATHER_API_KEY", "")
+
 android {
     namespace 'com.example.simpleagendaapp'
     compileSdk 34
+
+    buildFeatures {
+        buildConfig true
+    }
 
     defaultConfig {
         applicationId "com.example.simpleagendaapp"
@@ -14,6 +28,8 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        buildConfigField "String", "WEATHER_API_KEY", "\"${weatherApiKey}\""
     }
 
     buildTypes {

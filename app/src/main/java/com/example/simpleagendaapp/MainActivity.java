@@ -384,7 +384,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void getWeatherData(double lat, double lon, String date) {
         // Ανάκτηση δεδομένων καιρού από το OpenWeatherMap API
-        String apiKey = "b0a1c0886920d01187a8072079d4e5bf";
+        String apiKey = BuildConfig.WEATHER_API_KEY;
         String url = "https://api.openweathermap.org/data/2.5/forecast?lat=" + lat +
                 "&lon=" + lon + "&units=metric&lang=el&appid=" + apiKey;
 
