@@ -1,0 +1,28 @@
+# Android Studio / Project
+.idea/
+*.iml
+
+# Gradle & builds
+.gradle/
+**/build/
+
+# Local config & secrets
+local.properties
+*.jks
+*.keystore
+
+# Native/NDK
+.externalNativeBuild/
+.cxx/
+
+# Outputs & logs
+*.apk
+*.aab
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Keep Gradle wrapper in repo
+!gradle/wrapper/gradle-wrapper.jar
